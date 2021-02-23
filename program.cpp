@@ -38,6 +38,7 @@ void bush::output(ofstream &ofst)
 
 tree::~tree() {}
 bush::~bush() {}
+flower::~flower() {}
 
 plant *plant::plant_input(ifstream &ifst)
 {
@@ -182,8 +183,8 @@ void flower::input(ifstream &ifst)
 void flower::output(ofstream &ofst)
 {
     cout << flower_kind + 1 << endl;
-    ofst << "It is bush named: " << name
-         << " and it's month flowering: " << flower_kind + 1 << endl;
+    ofst << "It is flower named: " << name
+         << " and it's kind: " << flower_kind + 1 << endl;
 }
 
 
