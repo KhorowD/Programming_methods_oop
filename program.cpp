@@ -9,31 +9,37 @@ void tree::input(ifstream &ifst)
 
     string tmp_name = "";
     long tmp_age = 0;
-    ifst >> tmp_name >> tmp_age;
+    int place = 0;
+    ifst >> tmp_name >> tmp_age >> place;
     name = tmp_name;
     age = tmp_age;
+    location_name = location(place);
 }
 
 void tree::output(ofstream &ofst)
 {
     ofst << "It is tree named: " << name
-         << " and it's age: " << age << endl;
+         << " and it's age: " << age
+         << ", and location name: "<< location_name + 1 << endl;
 }
 
 void bush::input(ifstream &ifst)
 {
     string tmp_name = "";
     int mnth = 0;
-    ifst >> tmp_name >> mnth;
+    int place = 0;
+    ifst >> tmp_name >> mnth >> place;
     m = month(mnth);
     name = tmp_name;
+    location_name = location(place);
 }
 
 void bush::output(ofstream &ofst)
 {
     cout << m + 1 << endl;
     ofst << "It is bush named: " << name
-         << " and it's month flowering: " << m + 1 << endl;
+         << " and it's month flowering: " << m + 1
+         << ", and location name: "<< location_name + 1<< endl;
 }
 
 tree::~tree() {}

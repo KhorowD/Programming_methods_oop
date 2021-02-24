@@ -9,7 +9,10 @@ namespace type_plants {
     class plant
     {
     public:
+        enum location {TUNDRA, DESERT, STEPPE, TAIGA, MIXED_FOREST, MOUNTAINS};
         string name;
+        location location_name;
+
 
         virtual ~plant() {};
         static plant *plant_input(ifstream &ifst);
