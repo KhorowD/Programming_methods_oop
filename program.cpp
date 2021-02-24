@@ -20,6 +20,11 @@ void tree::output(ofstream &ofst)
          << " and it's age: " << age << endl;
 }
 
+void tree::output_tree(ofstream &ofst)
+{
+    output(ofst);
+}
+
 void bush::input(ifstream &ifst)
 {
     string tmp_name = "";
@@ -58,6 +63,11 @@ plant *plant::plant_input(ifstream &ifst)
 
     plt_new->input(ifst);
     return plt_new;
+}
+
+void plant::output_tree(ofstream &ofst)
+{
+    ofst << endl;
 }
 
 node::~node() {}
@@ -118,6 +128,12 @@ bool node::output_node(ofstream &ofst)
 
 }
 
+bool node::output_node_tree(ofstream &ofst)
+{
+    plt->output_tree(ofst);
+    return true;
+}
+
 void container::output_list(ofstream &ofst)
 {
     node *currentNode;
@@ -136,6 +152,27 @@ void container::output_list(ofstream &ofst)
             currentNode = currentNode->next;
         }
         currentNode->output_node(ofst);
+    }
+}
+
+void container::output_tree(ofstream &ofst)
+{
+    node *currentNode;
+    if(size == 0)
+    {
+        cout << "LIST IS EMPTY!" << endl;
+        return;
+    }
+
+    ofst << "Only trees." << endl;
+    for(int i = 0; i < size; i++)
+    {
+        currentNode = head;
+        for(int j = 0; j < i; j++)
+        {
+            currentNode = currentNode->next;
+        }
+        currentNode->output_node_tree(ofst);
     }
 }
 

@@ -15,6 +15,7 @@ namespace type_plants {
         static plant *plant_input(ifstream &ifst);
         virtual void input(ifstream &ifst) = 0;
         virtual void output(ofstream &ofst) = 0;
+        virtual void output_tree(ofstream &ofst);
     };
 
     //  Деревья
@@ -25,6 +26,7 @@ namespace type_plants {
 
         void input(ifstream &ifst);
         void output(ofstream &ofst);
+        void output_tree(ofstream &ofst);
         ~tree();
     };
 
@@ -52,6 +54,7 @@ namespace type_plants {
 
         bool add_node(ifstream &ifst);
         bool output_node(ofstream &ofst);
+        bool output_node_tree(ofstream &ofst);
         ~node();
     };
 
@@ -64,6 +67,7 @@ namespace type_plants {
 
         void fill_list(ifstream &ifst);
         void output_list(ofstream &ofst);
+        void output_tree(ofstream &ofst);
         void clear_list();
 
         container();
