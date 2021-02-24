@@ -15,6 +15,8 @@ namespace type_plants {
         static plant *plant_input(ifstream &ifst);
         virtual void input(ifstream &ifst) = 0;
         virtual void output(ofstream &ofst) = 0;
+        virtual int get_consonant() = 0; //получение числа согласных в названии
+        bool compare(plant *other);
     };
 
     //  Деревья
@@ -25,6 +27,7 @@ namespace type_plants {
 
         void input(ifstream &ifst);
         void output(ofstream &ofst);
+        int get_consonant();
         ~tree();
     };
 
@@ -39,6 +42,7 @@ namespace type_plants {
 
         void input(ifstream &ifst);
         void output(ofstream &ofst);
+        int get_consonant();
         ~bush();
     };
 
@@ -65,6 +69,9 @@ namespace type_plants {
         void fill_list(ifstream &ifst);
         void output_list(ofstream &ofst);
         void clear_list();
+        node *get_node(int index);
+        void swap(int index_first, int index_second);
+        void sort();    //сортировка
 
         container();
         ~container();
