@@ -225,4 +225,47 @@ container::~container()
 {
     clear_list();
 }
+
+
+bool plant::compare(plant *other)
+{
+    return get_consonant() < other->get_consonant();
+}
+
+node *container::get_node(int index)
+{
+    node *returnNode = head;
+
+    for(int i = 0; i < index; i++)
+    {
+        returnNode = returnNode->next;
+    }
+
+    return returnNode;
+}
+
+void container::swap(int index_first, int index_second)
+{
+    node *temp = new node;
+
+    temp->plt = get_node(index_first)->plt;
+    get_node(index_first)->plt = get_node(index_second)->plt;
+    get_node(index_second)->plt = temp->plt;
+
+}
+
+void container::sort()
+{
+    for(int i = 0; i < size -1; i++)
+    {
+        for(int j = i + 1; j < size; j++)
+        {
+            if(get_node(i)->plt->compare(get_node(j)->plt))
+            {
+                swap(i,j);
+            }
+        }
+    }
+}
+
 }   // end type_plants namespace

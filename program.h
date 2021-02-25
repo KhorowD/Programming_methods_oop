@@ -16,6 +16,7 @@ namespace type_plants {
         virtual void input(ifstream &ifst) = 0;
         virtual void output(ofstream &ofst) = 0;
         virtual int get_consonant(); //получение числа согласных в названии
+        bool compare(plant *other);
     };
 
     //  Деревья
@@ -66,6 +67,9 @@ namespace type_plants {
         void fill_list(ifstream &ifst);
         void output_list(ofstream &ofst);
         void clear_list();
+        node *get_node(int index);
+        void swap(int index_first, int index_second);
+        void sort();    //сортировка
 
         container();
         ~container();
