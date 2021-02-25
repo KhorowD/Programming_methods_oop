@@ -17,28 +17,10 @@ void tree::input(ifstream &ifst)
 void tree::output(ofstream &ofst)
 {
     ofst << "It is tree named: " << name
-         << " and it's age: " << age
-         << ", Number of consonants: " << get_consonant() << endl;
+         << " and it's age: " << age;
+    outputCommon(ofst);
+    ofst << endl;
 }
-
-//int tree::get_consonant()
-//{
-//    int count = 0;
-//    string vowels = "aeiouy";
-
-//    for(unsigned int i = 0; i < vowels.size(); i++)
-//    {
-//        for(unsigned int j = 0; j < name.size(); j++)
-//        {
-//            if(vowels[i] == name[j])
-//            {
-//                count++;
-//            }
-//        }
-//    }
-
-//    return (name.size() - count); //возвращаем число (длина - гласные)
-//}
 
 void bush::input(ifstream &ifst)
 {
@@ -53,28 +35,10 @@ void bush::output(ofstream &ofst)
 {
     cout << m + 1 << endl;
     ofst << "It is bush named: " << name
-         << " and it's month flowering: " << m + 1
-         << ", Number of consonants: " << get_consonant() << endl;
+         << " and it's month flowering: " << m + 1;
+    outputCommon(ofst);
+    ofst << endl;
 }
-
-//int bush::get_consonant()
-//{
-//    int count = 0;
-//    string vowels = "aeiouy";
-
-//    for(unsigned int i = 0; i < vowels.size(); i++)
-//    {
-//        for(unsigned int j = 0; j < name.size(); j++)
-//        {
-//            if(vowels[i] == name[j])
-//            {
-//                count++;
-//            }
-//        }
-//    }
-
-//    return (name.size() - count); //возвращаем число (длина - гласные)
-//}
 
 tree::~tree() {}
 bush::~bush() {}
@@ -230,6 +194,11 @@ container::~container()
 bool plant::compare(plant *other)
 {
     return get_consonant() < other->get_consonant();
+}
+
+void plant::outputCommon(ofstream &ofst)
+{
+    ofst << ", Number of consonants: " << get_consonant();
 }
 
 node *container::get_node(int index)

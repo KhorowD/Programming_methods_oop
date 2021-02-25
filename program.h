@@ -17,6 +17,7 @@ namespace type_plants {
         virtual void output(ofstream &ofst) = 0;
         virtual int get_consonant(); //получение числа согласных в названии
         bool compare(plant *other);
+        void outputCommon(ofstream &ofst);
     };
 
     //  Деревья
