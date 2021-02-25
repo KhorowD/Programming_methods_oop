@@ -21,24 +21,24 @@ void tree::output(ofstream &ofst)
          << ", Number of consonants: " << get_consonant() << endl;
 }
 
-int tree::get_consonant()
-{
-    int count = 0;
-    string vowels = "aeiouy";
+//int tree::get_consonant()
+//{
+//    int count = 0;
+//    string vowels = "aeiouy";
 
-    for(unsigned int i = 0; i < vowels.size(); i++)
-    {
-        for(unsigned int j = 0; j < name.size(); j++)
-        {
-            if(vowels[i] == name[j])
-            {
-                count++;
-            }
-        }
-    }
+//    for(unsigned int i = 0; i < vowels.size(); i++)
+//    {
+//        for(unsigned int j = 0; j < name.size(); j++)
+//        {
+//            if(vowels[i] == name[j])
+//            {
+//                count++;
+//            }
+//        }
+//    }
 
-    return (name.size() - count); //возвращаем число (длина - гласные)
-}
+//    return (name.size() - count); //возвращаем число (длина - гласные)
+//}
 
 void bush::input(ifstream &ifst)
 {
@@ -57,24 +57,24 @@ void bush::output(ofstream &ofst)
          << ", Number of consonants: " << get_consonant() << endl;
 }
 
-int bush::get_consonant()
-{
-    int count = 0;
-    string vowels = "aeiouy";
+//int bush::get_consonant()
+//{
+//    int count = 0;
+//    string vowels = "aeiouy";
 
-    for(unsigned int i = 0; i < vowels.size(); i++)
-    {
-        for(unsigned int j = 0; j < name.size(); j++)
-        {
-            if(vowels[i] == name[j])
-            {
-                count++;
-            }
-        }
-    }
+//    for(unsigned int i = 0; i < vowels.size(); i++)
+//    {
+//        for(unsigned int j = 0; j < name.size(); j++)
+//        {
+//            if(vowels[i] == name[j])
+//            {
+//                count++;
+//            }
+//        }
+//    }
 
-    return (name.size() - count); //возвращаем число (длина - гласные)
-}
+//    return (name.size() - count); //возвращаем число (длина - гласные)
+//}
 
 tree::~tree() {}
 bush::~bush() {}
@@ -98,6 +98,25 @@ plant *plant::plant_input(ifstream &ifst)
 
     plt_new->input(ifst);
     return plt_new;
+}
+
+int plant::get_consonant()
+{
+    int count = 0;
+    string vowels = "aeiouy";
+
+    for(unsigned int i = 0; i < vowels.size(); i++)
+    {
+        for(unsigned int j = 0; j < name.size(); j++)
+        {
+            if(vowels[i] == name[j])
+            {
+                count++;
+            }
+        }
+    }
+
+    return (name.size() - count); //возвращаем число (длина - гласные)
 }
 
 node::~node() {}
