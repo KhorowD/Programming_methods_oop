@@ -26,6 +26,8 @@ void tree::output(ofstream &ofst)
 void tree::output_tree(ofstream &ofst)
 {
     output(ofst);
+    outputCommon(ofst);
+    ofst << endl;
 }
 
 void bush::input(ifstream &ifst)
@@ -45,6 +47,9 @@ void bush::output(ofstream &ofst)
     ofst << "It is bush named: " << name
          << " and it's month flowering: " << m + 1
          << ", and location name: "<< location_name + 1<< endl;
+    outputCommon(ofst);
+    ofst << endl;
+
 }
 
 tree::~tree() {}
@@ -75,9 +80,30 @@ plant *plant::plant_input(ifstream &ifst)
     return plt_new;
 }
 
+
 void plant::output_tree(ofstream &ofst)
 {
     ofst << endl;
+}
+
+int plant::get_consonant()
+{
+    int count = 0;
+    string vowels = "aeiouy";
+
+    for(unsigned int i = 0; i < vowels.size(); i++)
+    {
+        for(unsigned int j = 0; j < name.size(); j++)
+        {
+            if(vowels[i] == name[j])
+            {
+                count++;
+            }
+        }
+    }
+
+    return (name.size() - count); //возвращаем число (длина - гласные)
+
 }
 
 node::~node() {}
@@ -213,7 +239,6 @@ container::~container()
 {
     clear_list();
 }
-
 void flower::input(ifstream &ifst)
 {
     string tmp_name = "";
@@ -230,6 +255,54 @@ void flower::output(ofstream &ofst)
          << " and it's kind: " << flower_kind + 1 << endl;
 }
 
+
+
+
+bool plant::compare(plant *other)
+{
+    return get_consonant() < other->get_consonant();
+}
+
+void plant::outputCommon(ofstream &ofst)
+{
+    ofst << ", Number of consonants: " << get_consonant();
+}
+
+node *container::get_node(int index)
+{
+    node *returnNode = head;
+
+    for(int i = 0; i < index; i++)
+    {
+        returnNode = returnNode->next;
+    }
+
+    return returnNode;
+}
+
+void container::swap(int index_first, int index_second)
+{
+    node *temp = new node;
+
+    temp->plt = get_node(index_first)->plt;
+    get_node(index_first)->plt = get_node(index_second)->plt;
+    get_node(index_second)->plt = temp->plt;
+
+}
+
+void container::sort()
+{
+    for(int i = 0; i < size -1; i++)
+    {
+        for(int j = i + 1; j < size; j++)
+        {
+            if(get_node(i)->plt->compare(get_node(j)->plt))
+            {
+                swap(i,j);
+            }
+        }
+    }
+}
 
 
 }   // end type_plants namespace
