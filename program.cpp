@@ -21,13 +21,13 @@ void tree::output(ofstream &ofst)
     ofst << "It is tree named: " << name
          << " and it's age: " << age
          << ", and location name: "<< location_name + 1 << endl;
+    outputCommon(ofst);
 }
 
 void tree::output_tree(ofstream &ofst)
 {
     output(ofst);
     outputCommon(ofst);
-    ofst << endl;
 }
 
 void bush::input(ifstream &ifst)
@@ -48,7 +48,6 @@ void bush::output(ofstream &ofst)
          << " and it's month flowering: " << m + 1
          << ", and location name: "<< location_name + 1<< endl;
     outputCommon(ofst);
-    ofst << endl;
 
 }
 
@@ -243,16 +242,20 @@ void flower::input(ifstream &ifst)
 {
     string tmp_name = "";
     int type = 0;
-    ifst >> tmp_name >> type;
+    int place = 0;
+    ifst >> tmp_name >> type >> place;
     flower_kind = kind(type);
     name = tmp_name;
+    location_name = location(place);
 }
 
 void flower::output(ofstream &ofst)
 {
     cout << flower_kind + 1 << endl;
     ofst << "It is flower named: " << name
-         << " and it's kind: " << flower_kind + 1 << endl;
+         << " and it's kind: " << flower_kind + 1
+         << ", and location name: "<< location_name + 1 << endl;
+    outputCommon(ofst);
 }
 
 
@@ -265,7 +268,7 @@ bool plant::compare(plant *other)
 
 void plant::outputCommon(ofstream &ofst)
 {
-    ofst << ", Number of consonants: " << get_consonant();
+    ofst << ", Number of consonants: " << get_consonant() << endl;
 }
 
 node *container::get_node(int index)

@@ -32,12 +32,9 @@ int main(int argc, char const *argv[])
     container c;
     c.fill_list(ifst);
     cout << "Filled container. " << endl;
-<<<<<<< HEAD
-    c.output_tree(ofst);
-=======
+//    c.output_tree(ofst);
     c.sort();
     c.output_list(ofst);
->>>>>>> new_sort
     c.clear_list();
     cout << "Empty container. " << endl;
     c.output_list(ofst);
