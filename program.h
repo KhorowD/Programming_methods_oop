@@ -45,6 +45,17 @@ namespace type_plants {
         ~bush();
     };
 
+    class flower: public plant
+    {
+        enum kind {DOMESTIC, GARDEN, WILD};
+    public:
+        kind flower_kind;
+
+        void input(ifstream &ifst);
+        void output(ofstream &ofst);
+        ~flower();
+    };
+
     //
     class node
     {

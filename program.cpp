@@ -44,6 +44,7 @@ void bush::output(ofstream &ofst)
 
 tree::~tree() {}
 bush::~bush() {}
+flower::~flower() {}
 
 plant *plant::plant_input(ifstream &ifst)
 {
@@ -57,6 +58,9 @@ plant *plant::plant_input(ifstream &ifst)
         break;
     case 2:
         plt_new = new bush;
+        break;
+    case 3:
+        plt_new = new flower;
         break;
     default:
         return 0;
@@ -172,4 +176,23 @@ container::~container()
 {
     clear_list();
 }
+
+void flower::input(ifstream &ifst)
+{
+    string tmp_name = "";
+    int type = 0;
+    ifst >> tmp_name >> type;
+    flower_kind = kind(type);
+    name = tmp_name;
+}
+
+void flower::output(ofstream &ofst)
+{
+    cout << flower_kind + 1 << endl;
+    ofst << "It is flower named: " << name
+         << " and it's kind: " << flower_kind + 1 << endl;
+}
+
+
+
 }   // end type_plants namespace
