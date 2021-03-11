@@ -27,7 +27,7 @@ void tree::output(ofstream &ofst)
 void tree::output_tree(ofstream &ofst)
 {
     output(ofst);
-    outputCommon(ofst);
+//    outputCommon(ofst);
 }
 
 void bush::input(ifstream &ifst)
