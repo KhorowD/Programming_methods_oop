@@ -43,7 +43,7 @@ void bush::input(ifstream &ifst)
 
 void bush::output(ofstream &ofst)
 {
-    cout << m + 1 << endl;
+//    cout << m + 1 << endl;
     ofst << "It is bush named: " << name
          << " and it's month flowering: " << m + 1
          << ", and location name: "<< location_name + 1<< endl;
@@ -251,7 +251,7 @@ void flower::input(ifstream &ifst)
 
 void flower::output(ofstream &ofst)
 {
-    cout << flower_kind + 1 << endl;
+//    cout << flower_kind + 1 << endl;
     ofst << "It is flower named: " << name
          << " and it's kind: " << flower_kind + 1
          << ", and location name: "<< location_name + 1 << endl;
