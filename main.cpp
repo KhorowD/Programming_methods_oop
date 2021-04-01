@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <vector>
 #include <QTest>
 #include "test/test.cpp"
 #include "program.h"
@@ -8,6 +9,8 @@ using namespace type_plants;
 
 int main(int argc, char const *argv[])
 {
+    vector<int> vect;
+
 
     QTest::qExec(new test_plant);
 

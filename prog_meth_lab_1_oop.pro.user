@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.14.0, 2021-03-10T20:15:43. -->
+<!-- Written by QtCreator 4.14.1, 2021-04-01T00:53:25. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -64,7 +64,15 @@
     <value type="bool" key="AutoTest.Framework.QtQuickTest">true</value>
     <value type="bool" key="AutoTest.Framework.QtTest">true</value>
    </valuemap>
-   <valuemap type="QVariantMap" key="AutoTest.CheckStates"/>
+   <valuemap type="QVariantMap" key="AutoTest.CheckStates">
+    <value type="Qt::CheckState" key="D:/Projects/Qt/Programming_methods_oop/test/test.cpp:test_compare">Checked</value>
+    <value type="Qt::CheckState" key="D:/Projects/Qt/Programming_methods_oop/test/test.cpp:test_get_consonant">Checked</value>
+    <value type="Qt::CheckState" key="D:/Projects/Qt/Programming_methods_oop/test/test.cpp:test_io">Checked</value>
+    <value type="Qt::CheckState" key="D:/Projects/Qt/Programming_methods_oop/test/test.cpp:test_output_tree">Checked</value>
+    <value type="Qt::CheckState" key="D:/Projects/Qt/Programming_methods_oop/test/test.cpp:test_sort">Checked</value>
+    <value type="Qt::CheckState" key="D:/Projects/Qt/Programming_methods_oop/test/test.cpp:test_swap">Checked</value>
+    <value type="Qt::CheckState" key="D:/Projects/Qt/Programming_methods_oop/test/test.h:test_plant">Checked</value>
+   </valuemap>
    <value type="int" key="AutoTest.RunAfterBuild">0</value>
    <value type="bool" key="AutoTest.UseGlobal">true</value>
    <valuelist type="QVariantList" key="ClangCodeModel.CustomCommandLineKey">
@@ -296,7 +304,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Projects/Qt/Programming_methods_oop/prog_meth_lab_1_oop.pro</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Projects/Qt/Programming_methods_oop/prog_meth_lab_1_oop.pro</value>
-    <value type="QString" key="RunConfiguration.Arguments">D:\Projects\Qt\build-prog_meth_lab_1-Desktop_Qt_5_12_4_MinGW_32_bit-Release\release\in.txt D:\Projects\Qt\build-prog_meth_lab_1-Desktop_Qt_5_12_4_MinGW_32_bit-Release\release\out.txt</value>
+    <value type="QString" key="RunConfiguration.Arguments">D:\Projects\Qt\Programming_methods_oop\in.txt D:\Projects\Qt\Programming_methods_oop\out.txt</value>
     <value type="bool" key="RunConfiguration.Arguments.multi">true</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
@@ -518,10 +526,11 @@
     <valuelist type="QVariantList" key="CustomOutputParsers"/>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">ProjectExplorer.CustomExecutableRunConfiguration</value>
-    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.Qt4RunConfiguration:D:/Projects/Qt/Programming_methods_oop/prog_meth_lab_1_oop.pro</value>
+    <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">D:/Projects/Qt/Programming_methods_oop/prog_meth_lab_1_oop.pro</value>
     <value type="bool" key="RunConfiguration.UseCppDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseCppDebuggerAuto">true</value>
+    <value type="bool" key="RunConfiguration.UseLibrarySearchPath">true</value>
     <value type="bool" key="RunConfiguration.UseQmlDebugger">false</value>
     <value type="bool" key="RunConfiguration.UseQmlDebuggerAuto">true</value>
    </valuemap>
