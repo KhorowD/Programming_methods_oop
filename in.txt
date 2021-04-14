@@ -1,5 +1,5 @@
 1 topol 3000 0
-2 mozevelnik 9 0
+2 mozevelnik 9 5
 1 dub 50 0
 1 bereza 251 0
 2 smorodina 9 0
