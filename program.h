@@ -15,6 +15,9 @@ namespace type_plants {
         static plant *plant_input(ifstream &ifst);
         virtual void input(ifstream &ifst) = 0;
         virtual void output(ofstream &ofst) = 0;
+        virtual void multimethod(plant *other, ofstream &ofst) = 0;
+        virtual void mm_tree(ofstream &ofst) = 0;
+        virtual void mm_bush(ofstream &ofst) = 0;
     };
 
     //  Деревья
@@ -25,6 +28,9 @@ namespace type_plants {
 
         void input(ifstream &ifst);
         void output(ofstream &ofst);
+        void multimethod(plant *other, ofstream &ofst);
+        void mm_tree(ofstream &ofst);
+        void mm_bush(ofstream &ofst);
         ~tree();
     };
 
@@ -39,6 +45,9 @@ namespace type_plants {
 
         void input(ifstream &ifst);
         void output(ofstream &ofst);
+        void multimethod(plant *other, ofstream &ofst);
+        void mm_tree(ofstream &ofst);
+        void mm_bush(ofstream &ofst);
         ~bush();
     };
 
@@ -52,10 +61,11 @@ namespace type_plants {
 
         bool add_node(ifstream &ifst);
         bool output_node(ofstream &ofst);
+
         ~node();
     };
 
-    struct container
+    class container
     {
     public:
         long size;
@@ -65,6 +75,8 @@ namespace type_plants {
         void fill_list(ifstream &ifst);
         void output_list(ofstream &ofst);
         void clear_list();
+        void multimethod(ofstream &ofst);
+        node *get_node(int index);
 
         container();
         ~container();

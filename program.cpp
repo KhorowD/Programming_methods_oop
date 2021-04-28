@@ -20,6 +20,21 @@ void tree::output(ofstream &ofst)
          << " and it's age: " << age << endl;
 }
 
+void tree::multimethod(plant *other, ofstream &ofst)
+{
+    other->mm_tree(ofst);
+}
+void tree::mm_tree(ofstream &ofst)
+{
+    cout << "Tree and tree" << endl;
+    ofst << "Tree and tree" << endl;
+}
+void tree::mm_bush(ofstream &ofst)
+{
+    cout << "Bush and tree" << endl;
+    ofst << "Bush and tree" << endl;
+}
+
 void bush::input(ifstream &ifst)
 {
     string tmp_name = "";
@@ -34,6 +49,21 @@ void bush::output(ofstream &ofst)
     cout << m + 1 << endl;
     ofst << "It is bush named: " << name
          << " and it's month flowering: " << m + 1 << endl;
+}
+
+void bush::multimethod(plant *other, ofstream &ofst)
+{
+    other->mm_bush(ofst);
+}
+void bush::mm_tree(ofstream &ofst)
+{
+    cout << "Tree and bush" << endl;
+    ofst << "Tree and bush" << endl;
+}
+void bush::mm_bush(ofstream &ofst)
+{
+    cout << "Bush and bush" << endl;
+    ofst << "Bush and bush" << endl;
 }
 
 tree::~tree() {}
@@ -111,6 +141,19 @@ void container::fill_list(ifstream &ifst)
     delete(tmpNode);
 }
 
+
+node *container::get_node(int index)
+{
+    node *returnNode = head;
+
+    for(int i = 0; i < index; i++)
+    {
+        returnNode = returnNode->next;
+    }
+
+    return returnNode;
+}
+
 bool node::output_node(ofstream &ofst)
 {
     plt->output(ofst);
@@ -166,4 +209,20 @@ container::~container()
 {
     clear_list();
 }
+
+void container::multimethod(ofstream &ofst)
+{
+    ofst << "Multimethod" << endl;
+
+    for(int i = 0; i < size -1; i++)
+    {
+        for(int j = i + 1; j < size; j++)
+        {
+            get_node(i)->plt->multimethod(get_node(j)->plt, ofst);
+            get_node(i)->output_node(ofst);
+            get_node(j)->output_node(ofst);
+        }
+    }
+}
+
 }   // end type_plants namespace
