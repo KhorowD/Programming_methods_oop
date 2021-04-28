@@ -40,8 +40,11 @@ int main(int argc, char const *argv[])
     ofst << "sorted container" << endl;
     c.sort();
     c.output_list(ofst);
-    ofst << "filtered" << endl;
+    ofst << "filtered" << endl;    
     c.output_tree(ofst);
+
+    c.multimethod(ofst); //multimethod
+
     c.clear_list();
     cout << "Empty container. " << endl;
     c.output_list(ofst);

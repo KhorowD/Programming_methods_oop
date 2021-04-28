@@ -74,6 +74,26 @@ void tree::output_tree(ofstream &ofst)
 //    outputCommon(ofst);
 }
 
+void tree::multimethod(plant *other, ofstream &ofst)
+{
+    other->mm_tree(ofst);
+}
+void tree::mm_tree(ofstream &ofst)
+{
+    cout << "Tree and tree" << endl;
+    ofst << "Tree and tree" << endl;
+}
+void tree::mm_bush(ofstream &ofst)
+{
+    cout << "Bush and tree" << endl;
+    ofst << "Bush and tree" << endl;
+}
+void tree::mm_flower(ofstream &ofst)
+{
+    cout << "Flower and tree" << endl;
+    ofst << "Flower and tree" << endl;
+}
+
 void bush::input(ifstream &ifst)
 {
     string tmp_name = "";
@@ -129,6 +149,26 @@ void bush::output(ofstream &ofst)
          << ", and location name: "<< location_name + 1<< endl;
     outputCommon(ofst);
 
+}
+
+void bush::multimethod(plant *other, ofstream &ofst)
+{
+    other->mm_bush(ofst);
+}
+void bush::mm_tree(ofstream &ofst)
+{
+    cout << "Tree and bush" << endl;
+    ofst << "Tree and bush" << endl;
+}
+void bush::mm_bush(ofstream &ofst)
+{
+    cout << "Bush and bush" << endl;
+    ofst << "Bush and bush" << endl;
+}
+void bush::mm_flower(ofstream &ofst)
+{
+    cout << "Flower and bush" << endl;
+    ofst << "Flower and bush" << endl;
 }
 
 tree::~tree() {}
@@ -325,7 +365,7 @@ void container::clear_list()
 }
 
 container::container()
-    {
+{
         size = 0;
         head = NULL;
 }
@@ -390,8 +430,25 @@ void flower::output(ofstream &ofst)
     outputCommon(ofst);
 }
 
-
-
+void flower::multimethod(plant *other, ofstream &ofst)
+{
+    other->mm_flower(ofst);
+}
+void flower::mm_tree(ofstream &ofst)
+{
+    cout << "Tree and flower" << endl;
+    ofst << "Tree and flower" << endl;
+}
+void flower::mm_bush(ofstream &ofst)
+{
+    cout << "Bush and flower" << endl;
+    ofst << "Bush and flower" << endl;
+}
+void flower::mm_flower(ofstream &ofst)
+{
+    cout << "Flower and flower" << endl;
+    ofst << "Flower and flower" << endl;
+}
 
 bool plant::compare(plant *other)
 {
@@ -439,5 +496,19 @@ void container::sort()
     }
 }
 
+void container::multimethod(ofstream &ofst)
+{
+    ofst << "Multimethod" << endl;
+
+    for(int i = 0; i < size -1; i++)
+    {
+        for(int j = i + 1; j < size; j++)
+        {
+            get_node(i)->plt->multimethod(get_node(j)->plt, ofst);
+            get_node(i)->output_node(ofst);
+            get_node(j)->output_node(ofst);
+        }
+    }
+}
 
 }   // end type_plants namespace

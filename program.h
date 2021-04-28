@@ -20,6 +20,10 @@ namespace type_plants {
         virtual void output(ofstream &ofst) = 0;
         virtual void output_tree(ofstream &ofst);
         virtual int get_consonant(); //получение числа согласных в названии
+        virtual void multimethod(plant *other, ofstream &ofst) = 0;
+        virtual void mm_tree(ofstream &ofst) = 0;
+        virtual void mm_bush(ofstream &ofst) = 0;
+        virtual void mm_flower(ofstream &ofst) = 0;
         bool compare(plant *other);
         void outputCommon(ofstream &ofst);
 
@@ -34,6 +38,10 @@ namespace type_plants {
         void input(ifstream &ifst);
         void output(ofstream &ofst);
         void output_tree(ofstream &ofst);
+        void multimethod(plant *other, ofstream &ofst);
+        void mm_tree(ofstream &ofst);
+        void mm_bush(ofstream &ofst);
+        void mm_flower(ofstream &ofst);
         ~tree();
     };
 
@@ -48,6 +56,10 @@ namespace type_plants {
 
         void input(ifstream &ifst);
         void output(ofstream &ofst);
+        void multimethod(plant *other, ofstream &ofst);
+        void mm_tree(ofstream &ofst);
+        void mm_bush(ofstream &ofst);
+        void mm_flower(ofstream &ofst);
         ~bush();
     };
 
@@ -59,6 +71,10 @@ namespace type_plants {
 
         void input(ifstream &ifst);
         void output(ofstream &ofst);
+        void multimethod(plant *other, ofstream &ofst);
+        void mm_tree(ofstream &ofst);
+        void mm_bush(ofstream &ofst);
+        void mm_flower(ofstream &ofst);
         ~flower();
     };
 
@@ -90,6 +106,7 @@ namespace type_plants {
         node *get_node(int index);
         void swap(int index_first, int index_second);
         void sort();    //сортировка
+        void multimethod(ofstream &ofst);
 
         container();
         ~container();
